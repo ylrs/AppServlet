@@ -1,11 +1,14 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="AppServert:war exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/AppServert_war_exploded</output-path>
+  <artifact type="exploded-war" build-on-make="true" name="HttpServlet">
+    <output-path>$PROJECT_DIR$/out/artifacts/HttpServlet</output-path>
     <root id="root">
       <element id="javaee-facet-resources" facet="AppServert/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="AppServert" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="lib" />
         </element>
       </element>
     </root>

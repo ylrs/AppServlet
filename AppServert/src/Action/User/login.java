@@ -31,7 +31,7 @@ public class login extends ActionSupport{
 
             ResultSet rs = null;
 
-            String sql = "select * from user where mobile = " + mobile;
+            String sql = "select * from user";
 
             rs =  MySqlConnection.getConnection().createStatement().executeQuery(sql);
 
