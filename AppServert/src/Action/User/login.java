@@ -33,7 +33,9 @@ public class login extends ActionSupport{
 
             String sql = "select * from user";
 
-            rs =  MySqlConnection.getConnection().createStatement().executeQuery(sql);
+            MySqlConnection connection = new MySqlConnection();
+
+            rs =  connection.getConnection().createStatement().executeQuery(sql);
 
             List<Map<String,Object>> userlist = new ArrayList<Map<String,Object>>();
 
@@ -57,6 +59,8 @@ public class login extends ActionSupport{
             jsonData.put("code","200");
 
             rs.close();
+
+            connection.CloseConnection();
         }
         catch (Exception ex){
 

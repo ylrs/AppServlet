@@ -13,13 +13,13 @@ public class MySqlConnection {
     static final String PASS = "as19890413";
 
     // 连接实例
-    private static Connection conn = null;
+    public  Connection conn = null;
 
     public MySqlConnection() throws Exception {
 
 
     }
-    private static void init() {
+    private  void init() {
 
         try{
 
@@ -34,21 +34,29 @@ public class MySqlConnection {
         }
     }
     //获得连接对象
-    public static Connection getConnection(){
+    public  Connection getConnection(){
 
         System.out.println("conn");
 
-        if (conn == null){
+        try {
+            if (conn == null){
 
-            init();
+                init();
 
-            System.out.println("initConnect");
+                System.out.println("initConnect");
+
+            }
+        }
+        catch (Exception ex){
+
 
         }
-        return conn;
+
+        return  conn;
     }
 
-    public static void CloseConnection() throws SQLException{
+    public void CloseConnection() throws SQLException{
+
         try{
 
             conn.close();
@@ -61,7 +69,7 @@ public class MySqlConnection {
     }
 
     //关闭连接
-    public static void CloseConnection(ResultSet rs,Statement st,PreparedStatement pstmt) throws SQLException{
+    public  void CloseConnection(ResultSet rs,Statement st,PreparedStatement pstmt) throws SQLException{
         try{
 
             if (rs != null){
